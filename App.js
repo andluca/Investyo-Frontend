@@ -1,13 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import HomeScreen from './src/components/HomeScreen';
+
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  let [fontsLoaded] = useFonts({
+    'NixieOne': require('./assets/fonts/NixieOne.ttf'),
+    'ExistenceLight': require('./assets/fonts/Existence-Light.ttf'),
+    'RobotoThin': require('./assets/fonts/Roboto-Thin.ttf'),
+  });
+  if (!fontsLoaded) {
+    return (
+      <AppLoading />
+    )
+  } else {
+    return (
+      <SafeAreaView style={styles.container}>
+        <StatusBar/>
+        <HomeScreen></HomeScreen>
+      </SafeAreaView>
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -15,6 +31,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
