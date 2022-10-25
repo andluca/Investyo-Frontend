@@ -2,16 +2,16 @@ import React, {useEffect, useState, useCallback} from 'react';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
-import mock from './src/mocks/home';
+import { home, calculator } from './src/mocks/mock';
 
-import{ StyleSheet, StatusBar, Text } from 'react-native';
+import{ StyleSheet, StatusBar, Text, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import SignScreen from './src/screens/Login/SignScreen';
 import NavBar from './src/components/NavBar';
 import CalculatorScreen from './src/screens/Calculator/CalculatorScreen';
 import HomeScreen from './src/screens/Home/HomeScreen';
-import BalanceBox from './src/screens/Home/components/BalanceBox';
+import { ScrollView } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,11 +34,14 @@ export default function App() {
   }else{
 
     return (
-
       <SafeAreaView style={styles.container}>
-        <StatusBar/>
-          <HomeScreen/>
-      </SafeAreaView>  
+        
+          <StatusBar/>
+          <CalculatorScreen {...calculator}/>
+        
+        
+      </SafeAreaView>
+        
       
     ); 
     }      

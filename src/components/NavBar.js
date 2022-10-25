@@ -11,7 +11,7 @@ const height = Dimensions.get("screen").height;
 const w = 1/428 * width;
 const h = 1/926 * height;
 
-export default function NavBar() {
+export default function NavBar({title}) {
   return (
     <>
       <View style={[styles.container, { justifyContent: "flex-start" }]}>
@@ -21,7 +21,7 @@ export default function NavBar() {
       </View>
 
       <View style={[styles.container, { justifyContent: "center", }]}>
-        <Text style={styles.title}>Calculadora</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
 
       <View style={[styles.container, { justifyContent: "flex-end" }]}>

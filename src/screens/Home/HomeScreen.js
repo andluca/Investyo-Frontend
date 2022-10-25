@@ -18,13 +18,13 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function HomeScreen() {
+export default function HomeScreen({balancebox, navbar}) {
   return (
     <>
 
-      <NavBar></NavBar>
+      <NavBar {...navbar}></NavBar>
 
-      <BalanceBox></BalanceBox>
+      <BalanceBox {...balancebox}></BalanceBox>
 
       <View style={styles.optionsStyle}>
 

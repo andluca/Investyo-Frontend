@@ -18,7 +18,7 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function BalanceBox(){
+export default function BalanceBox({text1}){
     return(
         <View style={[styles.boxGradient, styles.boxGradientShadow]}>
         <View
@@ -49,7 +49,7 @@ export default function BalanceBox(){
                   start={[1, 0]}
                   end={[0, 1]}
                 >
-                  <Text style={styles.patrimony}>PATRIMÔNIO</Text>
+                  <Text style={styles.patrimony}>{text1}</Text>
 
                   <View style={styles.valueContainer}>
 
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     
       boxGradientShadow: {
         elevation: 10,
-        shadowColor: "#000",
+        shadowColor: "#171717",
         shadowOpacity: 1,
       },
     

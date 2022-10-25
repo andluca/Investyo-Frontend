@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
       },
       buttonOptionsShadow: {
         elevation: 10,
-        shadowColor: "#000",
+        shadowColor: "#171717",
         shadowOpacity: 1,
       },
 
