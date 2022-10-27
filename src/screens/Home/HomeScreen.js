@@ -4,8 +4,7 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-
-import NavBar from "../../components/NavBar";
+import HeaderBar from "../../components/HeaderBar";
 import AddButton from "./components/AddButton";
 import AssetsBox from "./components/AssetsBox";
 import BalanceBox from "./components/BalanceBox";
@@ -18,11 +17,11 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function HomeScreen({balancebox, navbar}) {
+export default function HomeScreen({balancebox, headerbar}) {
   return (
-    <>
+    <View style={{justifyContent: 'center'}}>
 
-      <NavBar {...navbar}></NavBar>
+      <HeaderBar {...headerbar}></HeaderBar>
 
       <BalanceBox {...balancebox}></BalanceBox>
 
@@ -40,7 +39,7 @@ export default function HomeScreen({balancebox, navbar}) {
 
       
 
-    </>
+    </View>
   );
 }
 

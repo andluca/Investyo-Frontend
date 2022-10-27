@@ -1,25 +1,15 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, StatusBar, View } from "react-native";
-import Options from "./components/Options";
-import Main from "./components/Main";
+import Header from "./components/Header";
+import { View } from "react-native";
+import Inputs from "./components/Inputs";
+import SignButton from "./components/SignButton";
 
-function SignScreen({main, options}) {
+export default function SignScreen({inputs, button}){
     return(
-        <View style={styles.container}>
-          <StatusBar></StatusBar>
-            <Main {...main}/>
-            <Options {...options}/>
-        </View>   
-        
-    );
-};
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-    },
-  });
-
-export default SignScreen;
+        <View>
+            <Header/>
+            <Inputs {...inputs}/>
+            <SignButton {...button}/>
+        </View>
+    )
+}

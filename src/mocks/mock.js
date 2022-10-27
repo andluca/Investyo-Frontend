@@ -1,6 +1,6 @@
 import homeicon from '../icons/icon.png'
 
-const sign = {
+const init = {
 
     main: {
         title: "INVESTYO",
@@ -15,7 +15,7 @@ const sign = {
 }
 
 const home ={
-    navbar: {
+    headerbar: {
         title: "Carteira",
     },
     balancebox:{
@@ -24,12 +24,35 @@ const home ={
 }
 
 const calculator ={
-    navbar: {
+    headerbar: {
         title: "Calculadora"
     },
 
+} 
+
+const signIn ={
+    inputs:{
+        message: 'Bem vindo de volta ao Investyo',
+        label: 'Entre em sua conta',
+    },
+    button:{
+        textButton:'Entrar',
+        underButton: 'Não tem uma conta?',
+        underBoldButton: 'Crie uma!'
+    }
+}
+
+const signUp = {
+    inputs:{
+        message: 'Bem vindo ao Investyo',
+        label: 'Crie uma conta'
+    },
+    button:{
+        textButton:'Criar',
+        underButton: 'Já tem uma conta?',
+        underBoldButton: 'Entre!'
+    }
 }
 
 
-
-export {sign, home, calculator};
+export {init, home, calculator, signIn, signUp};
