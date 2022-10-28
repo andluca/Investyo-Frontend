@@ -34,9 +34,7 @@ export default function AddButton(){
 
                   <View style={{ left: 11 * w }}>
 
-                    <Text style={styles.textOptions}>Adicionar</Text>
-
-                    <Text style={styles.textOptions}>Ativo</Text>
+                    <Text style={styles.textOptions}>Adicionar Ativo</Text>
 
                   </View>
 
@@ -70,7 +68,10 @@ const styles = StyleSheet.create({
       textOptions: {
         fontSize: RFPercentage(1.2),
         color: "#fff",
-        left: 11 * w,
+        left: 20 * w,
+        textAlign:'left',
+        width:49*w,
+        
       },
     
       buttonOptionsStyle: {

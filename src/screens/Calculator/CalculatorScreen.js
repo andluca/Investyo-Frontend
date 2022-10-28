@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { ScrollView } from "react-native";
-import { Dimensions, StyleSheet, TextInput, View, Text, TouchableOpacity } from "react-native";
+import { Dimensions, View } from "react-native";
 import HeaderBar from "../../components/HeaderBar";
 import GraphicBox from "./components/GraphicBox";
 import InputBox from "./components/InputBox";

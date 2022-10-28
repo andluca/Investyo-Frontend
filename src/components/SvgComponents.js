@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import Svg, {
   G,
   Path,
@@ -7,11 +7,13 @@ import Svg, {
   LinearGradient,
   Mask,
   Stop,
-  ClipPath,} from "react-native-svg"
-
+  ClipPath,
+  Ellipse,
+  Rect,
+  Line,
+} from "react-native-svg";
 
 const AskSvg = (props) => (
-  (
   <Svg
     width={24}
     height={24}
@@ -28,28 +30,27 @@ const AskSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-  )
-)
+);
 
-const UserSvg = (props)=>{
-  return(
-  <Svg
-    {...props}
-    width={24}
-    height={24}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <Path
-      d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
-      stroke="#5B2FB6"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </Svg>
-  )
-}
+const UserSvg = (props) => {
+  return (
+    <Svg
+      {...props}
+      width={24}
+      height={24}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <Path
+        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+        stroke="#5B2FB6"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+};
 
 const BarSvg = (props) => (
   <Svg
@@ -67,7 +68,7 @@ const BarSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-)
+);
 
 const VectorSvg = (props) => (
   <Svg
@@ -85,7 +86,7 @@ const VectorSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-)
+);
 
 const PlusSvg = (props) => (
   <Svg
@@ -105,7 +106,7 @@ const PlusSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-)
+);
 
 const MinusSvg = (props) => (
   <Svg
@@ -125,7 +126,7 @@ const MinusSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-)
+);
 
 const ExtractSvg = (props) => (
   <Svg
@@ -151,7 +152,7 @@ const ExtractSvg = (props) => (
       strokeLinejoin="round"
     />
   </Svg>
-)
+);
 
 const ShinyIconSvg = (props) => (
   <Svg
@@ -252,15 +253,180 @@ const EyesOffSvg = (props) => (
       </ClipPath>
     </Defs>
   </Svg>
-)
+);
 
+const WalletSvg = (props) => (
+  <Svg
+    width={35}
+    height={35}
+    viewBox="0 0 35 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    accessibilityRole="image"
+    {...props}
+  >
+    <Rect y={5.42261} width={32.3077} height={29.5775} rx={3} fill="#2D1069" />
+    <Line
+      x1={2.69238}
+      y1={9.35205}
+      x2={32.3078}
+      y2={9.35205}
+      stroke="white"
+      strokeWidth={2}
+    />
+    <Path
+      d="M26.5259 21.1971C26.5259 19.2952 28.0677 17.7534 29.9695 17.7534H34.5002V24.6407H29.9695C28.0677 24.6407 26.5259 23.099 26.5259 21.1971Z"
+      fill="#2D1069"
+      stroke="white"
+    />
+    <Ellipse
+      cx={29.6152}
+      cy={21.1971}
+      rx={0.897436}
+      ry={0.985915}
+      fill="#2D1069"
+    />
+    <Path
+      d="M26.5697 3.09763C27.3449 2.82585 28.1944 3.22809 28.4755 3.99995L30.2473 8.86629H10.1167L26.5697 3.09763Z"
+      fill="#2D1069"
+      stroke="white"
+    />
+    <Path
+      d="M19.6228 1.30795C20.3346 0.945548 21.2056 1.20458 21.6037 1.89708L25.6102 8.8662H4.77657L19.6228 1.30795Z"
+      fill="#2D1069"
+      stroke="white"
+    />
+  </Svg>
+);
 
+const CalculatorSvg = (props) => (
+  <Svg
+    width={35}
+    height={35}
+    viewBox="0 0 35 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    accessibilityRole="image"
+    {...props}
+  >
+    <Rect
+      x={1}
+      y={1}
+      width={33}
+      height={33}
+      rx={4}
+      fill="#2D1069"
+      stroke="white"
+      strokeWidth={2}
+    />
+    <Rect x={5} y={5} width={25} height={5} rx={1} fill="white" />
+    <Rect x={8} y={12} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={22} y={12} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={15} y={12} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={8} y={19} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={22} y={19} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={15} y={19} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={8} y={26} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={22} y={26} width={5} height={4.5} rx={1} fill="white" />
+    <Rect x={15} y={26} width={5} height={4.5} rx={1} fill="white" />
+  </Svg>
+);
 
+const VideoSvg = (props) => (
+  <Svg
+    width={35}
+    height={35}
+    viewBox="0 0 35 35"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    accessibilityRole="image"
+    {...props}
+  >
+    <Rect
+      x={1}
+      y={1}
+      width={33}
+      height={33}
+      rx={4}
+      fill="#2D1069"
+      stroke="white"
+      strokeWidth={2}
+    />
+    <Path
+      d="M23.5 20.634C24.1667 21.0189 24.1667 21.9811 23.5 22.366L15.25 27.1292C14.5833 27.5141 13.75 27.0329 13.75 26.2631V16.7369C13.75 15.9671 14.5833 15.4859 15.25 15.8708L23.5 20.634Z"
+      fill="white"
+    />
+    <Line y1={9} x2={33} y2={9} stroke="white" strokeWidth={2} />
+    <Line x1={1.62371} y1={8.67075} x2={8.62371} y2={0.670747} stroke="white" />
+    <Line x1={14.6237} y1={9.67075} x2={21.6237} y2={1.67075} stroke="white" />
+    <Line x1={28.552} y1={9.60944} x2={33.6955} y2={3.732} stroke="white" />
+    <Line x1={21.6237} y1={9.67075} x2={28.6237} y2={1.67075} stroke="white" />
+    <Line x1={8.62371} y1={8.67075} x2={15.6237} y2={0.670747} stroke="white" />
+  </Svg>
+);
 
+const BackSvg = (props) => (
+  <Svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    accessibilityRole="image"
+    {...props}
+  >
+    <Circle
+      cx={12}
+      cy={12}
+      r={11}
+      fill="white"
+      stroke="#5B2FB6"
+      strokeWidth={2}
+    />
+    <Path
+      d="M6.3636 11.3636C6.01213 11.7151 6.01213 12.2849 6.3636 12.6364L12.0912 18.364C12.4426 18.7154 13.0125 18.7154 13.364 18.364C13.7154 18.0125 13.7154 17.4426 13.364 17.0912L8.27279 12L13.364 6.90883C13.7154 6.55736 13.7154 5.98751 13.364 5.63604C13.0125 5.28457 12.4426 5.28457 12.0912 5.63604L6.3636 11.3636ZM18 11.1L7 11.1V12.9L18 12.9V11.1Z"
+      fill="#5B2FB6"
+    />
+  </Svg>
+);
 
+const PencilSvg = (props) => (
+  <Svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    accessibilityRole="image"
+    {...props}
+  >
+    <Path
+      d="M5.02178 22.1364L2.38245 19.4365L20.2861 1.07408C20.479 0.876176 20.7923 0.875968 20.9856 1.07362L22.8235 2.9538C23.0156 3.15029 23.0167 3.46852 22.826 3.66638L5.02178 22.1364Z"
+      fill="white"
+      stroke="#5B2FB6"
+    />
+    <Path
+      d="M0.786 23.3087L1.87239 20.3451L4.04518 22.5678L0.786 23.3087Z"
+      fill="white"
+      stroke="#5B2FB6"
+    />
+  </Svg>
+);
 
-export {AskSvg, UserSvg, BarSvg, VectorSvg, PlusSvg, MinusSvg, ExtractSvg, ShinyIconSvg, WaveSvg, EyesOffSvg}
-
-
-
-
+export {
+  AskSvg,
+  UserSvg,
+  BarSvg,
+  VectorSvg,
+  PlusSvg,
+  MinusSvg,
+  ExtractSvg,
+  ShinyIconSvg,
+  WaveSvg,
+  EyesOffSvg,
+  WalletSvg,
+  CalculatorSvg,
+  VideoSvg,
+  BackSvg, 
+  PencilSvg
+};

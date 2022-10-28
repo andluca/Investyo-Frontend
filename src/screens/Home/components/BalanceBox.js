@@ -45,7 +45,7 @@ export default function BalanceBox({text1}){
                     "#2E1163",
                     "#1C0632",
                   ]}
-                  style={styles.box}
+                  style={[styles.boxGradient, {top:0}]}
                   start={[1, 0]}
                   end={[0, 1]}
                 >
@@ -55,9 +55,9 @@ export default function BalanceBox({text1}){
 
                     <Text style={styles.coin}>R$</Text>
 
-                    <Text style={styles.value}>258</Text>
+                    <Text style={styles.value}>258<Text style={styles.cents}>.27</Text></Text>
 
-                    <Text style={styles.cents}>.27</Text>
+                    
 
                   </View>
 
@@ -105,13 +105,7 @@ const styles = StyleSheet.create({
         position: "relative",
         fontFamily: "RobotoMedium",
       },
-    
-      box: {
-        width: 386 * w,
-        height: 211 * h,
-        borderRadius: 10,
-      },
-    
+
       valueContainer: {
         flexDirection: "row",
         top: 54 * h,
@@ -120,7 +114,6 @@ const styles = StyleSheet.create({
         width: 140 * w,
         height: 78 * h,
       },
-    
       coin: {
         top: 9 * h,
         fontSize: RFPercentage(2.25),

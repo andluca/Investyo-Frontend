@@ -1,10 +1,9 @@
-import homeicon from '../icons/icon.png'
+
 
 const init = {
 
     main: {
         title: "INVESTYO",
-        homeicon: homeicon,
     },
 
     options: {
@@ -54,5 +53,22 @@ const signUp = {
     }
 }
 
+const profile ={
+    headerbar:{
+        title: 'Conta'
+    },
+    informations:{
+        labelName: 'Nome de usuário',
+        name: 'AndLu',
+        labelBalanceInvested: 'Patrimônio Investido',
+        invested: '200.00',
+        labelTotalBalance: 'Patrimônio total',
+        total: '258.27',
+        experienceLevel: 'Nível de conhecimento',
+        level: 'Iniciante'
+    }
 
-export {init, home, calculator, signIn, signUp};
+}
+
+
+export {init, home, calculator, signIn, signUp, profile};

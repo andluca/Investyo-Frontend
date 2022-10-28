@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
       textOptions: {
         fontSize: RFPercentage(1.2),
         color: "#fff",
-        left: 11 * w,
+        left: 20 * w,
+        bottom: 6*h,
       },
 
       buttonOptionsStyle: {

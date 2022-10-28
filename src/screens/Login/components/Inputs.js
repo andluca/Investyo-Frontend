@@ -59,13 +59,8 @@ const styles = StyleSheet.create({
         left: 74*w,
     },
 
-    inputContainer:{
-        left: 51*w,
-        position: "relative",
-        top: 20*h,
-    },
-
     labelStyle:{
+
         fontFamily:'RobotoLight',
         fontSize: RFPercentage(2),
         color:'#450B61',
@@ -73,6 +68,12 @@ const styles = StyleSheet.create({
         top: 10*h,
         left: 73*w,
 
+    },
+
+    inputContainer:{
+        left: 51*w,
+        position: "relative",
+        top: 20*h,
     },
 
     inputBox:{
@@ -86,12 +87,5 @@ const styles = StyleSheet.create({
         elevation: 10,
         shadowColor: '#171717',
         shadowOpacity: 1,
-    },
-
-    passwordText:{
-        fontSize: RFPercentage(1.55),
-        color:'#450B61',
-        fontFamily: 'RobotoLight',
-
     },
 })

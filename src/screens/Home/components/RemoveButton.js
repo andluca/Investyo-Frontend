@@ -34,9 +34,7 @@ export default function RemoveButton(){
 
                   <View style={{ left: 11 * w }}>
 
-                    <Text style={styles.textOptions}>Remover</Text>
-
-                    <Text style={styles.textOptions}>Ativo</Text>
+                    <Text style={styles.textOptions}>Remover Ativo</Text>
 
                   </View>
 
@@ -71,7 +69,9 @@ const styles = StyleSheet.create({
       textOptions: {
         fontSize: RFPercentage(1.2),
         color: "#fff",
-        left: 11 * w,
+        left: 20 * w,
+        textAlign: 'center',
+        width: 49*w,
       },
     
       buttonOptionsStyle: {

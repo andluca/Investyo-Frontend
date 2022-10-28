@@ -1,16 +1,17 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import { home, calculator, init, signIn, signUp } from './src/mocks/mock';
 
-import{ StyleSheet, StatusBar, Text, Dimensions } from 'react-native';
+import{ StyleSheet, StatusBar} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import HeaderBar from './src/components/HeaderBar';
-import CalculatorScreen from './src/screens/Calculator/CalculatorScreen';
-import HomeScreen from './src/screens/Home/HomeScreen';
-import { ScrollView } from 'react-native';
-import InitialScreen from './src/screens/Initial/InitialScreen';
+import NavBar from './src/components/NavBar';
+import { Text } from 'react-native';
+
+import HomeScreen from './src/screens/Home/HomeScreen'
+import CalculatorScreen from './src/screens/Calculator/CalculatorScreen'
+import {home, calculator, init, signIn, signUp, profile} from './src/mocks/mock'
+import ProfileScreen from './src/screens/Profile/ProfileScreen';
 import SignScreen from './src/screens/Login/SignScreen';
 
 export default function App() {
@@ -35,14 +36,8 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         
           <StatusBar/>
-
+          <CalculatorScreen {...calculator}/>
           
-
-            <CalculatorScreen {...calculator}/>
-            
-          
-          
-        
         
       </SafeAreaView>
         
