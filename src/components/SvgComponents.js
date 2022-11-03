@@ -12,6 +12,13 @@ import Svg, {
   Rect,
   Line,
 } from "react-native-svg";
+import { Dimensions } from "react-native";
+
+const width = Dimensions.get("screen").width;
+const height = Dimensions.get("screen").height;
+
+const w = (1 / 428) * width;
+const h = (1 / 926) * height;
 
 const AskSvg = (props) => (
   <Svg
@@ -262,7 +269,6 @@ const WalletSvg = (props) => (
     viewBox="0 0 35 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    accessibilityRole="image"
     {...props}
   >
     <Rect y={5.42261} width={32.3077} height={29.5775} rx={3} fill="#2D1069" />
@@ -275,7 +281,7 @@ const WalletSvg = (props) => (
       strokeWidth={2}
     />
     <Path
-      d="M26.5259 21.1971C26.5259 19.2952 28.0677 17.7534 29.9695 17.7534H34.5002V24.6407H29.9695C28.0677 24.6407 26.5259 23.099 26.5259 21.1971Z"
+      d="M29.9695 17.7534H34.5002V24.6407H29.9695C28.0677 24.6407 26.5259 23.099 26.5259 21.1971C26.5259 19.2952 28.0677 17.7534 29.9695 17.7534Z"
       fill="#2D1069"
       stroke="white"
     />
@@ -287,12 +293,12 @@ const WalletSvg = (props) => (
       fill="#2D1069"
     />
     <Path
-      d="M26.5697 3.09763C27.3449 2.82585 28.1944 3.22809 28.4755 3.99995L30.2473 8.86629H10.1167L26.5697 3.09763Z"
+      d="M28.4755 3.99995L30.2473 8.86629H10.1167L26.5697 3.09763C27.3449 2.82585 28.1945 3.22809 28.4755 3.99995Z"
       fill="#2D1069"
       stroke="white"
     />
     <Path
-      d="M19.6228 1.30795C20.3346 0.945548 21.2056 1.20458 21.6037 1.89708L25.6102 8.8662H4.77657L19.6228 1.30795Z"
+      d="M21.6037 1.89708L25.6102 8.8662H4.77657L19.6228 1.30795C20.3346 0.945548 21.2056 1.20458 21.6037 1.89708Z"
       fill="#2D1069"
       stroke="white"
     />
@@ -306,7 +312,6 @@ const CalculatorSvg = (props) => (
     viewBox="0 0 35 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    accessibilityRole="image"
     {...props}
   >
     <Rect
@@ -339,7 +344,6 @@ const VideoSvg = (props) => (
     viewBox="0 0 35 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    accessibilityRole="image"
     {...props}
   >
     <Rect
@@ -413,6 +417,70 @@ const PencilSvg = (props) => (
   </Svg>
 );
 
+const LineGraphic = (props) => (
+  <Svg
+    width={350}
+    height={324}
+    viewBox="0 0 350 324"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M349.354 294.354C349.549 294.158 349.549 293.842 349.354 293.646L346.172 290.464C345.976 290.269 345.66 290.269 345.464 290.464C345.269 290.66 345.269 290.976 345.464 291.172L348.293 294L345.464 296.828C345.269 297.024 345.269 297.34 345.464 297.536C345.66 297.731 345.976 297.731 346.172 297.536L349.354 294.354ZM0 294.5L349 294.5V293.5L0 293.5L0 294.5Z"
+      fill="#5B2FB6"
+    />
+    <Path
+      d="M45.3536 0.646456C45.1583 0.451194 44.8417 0.451194 44.6464 0.646456L41.4645 3.82844C41.2692 4.0237 41.2692 4.34028 41.4645 4.53554C41.6597 4.73081 41.9763 4.73081 42.1716 4.53554L45 1.70712L47.8284 4.53554C48.0237 4.73081 48.3403 4.73081 48.5355 4.53554C48.7308 4.34028 48.7308 4.0237 48.5355 3.82844L45.3536 0.646456ZM45.5 324L45.5 1.00001H44.5L44.5 324H45.5Z"
+      fill="#5B2FB6"
+    />
+  </Svg>
+
+
+);
+
+const CancelSvg = (props) => (
+  <Svg
+    width={18}
+    height={18}
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M17 1L1 17"
+      stroke="#5B2FB6"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <Path
+      d="M17 17L1 1"
+      stroke="#5B2FB6"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
+const PlaySvg = (props) => (
+  <Svg
+    width={22}
+    height={26}
+    viewBox="0 0 11 13"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M10.5 5.63398C11.1667 6.01888 11.1667 6.98113 10.5 7.36603L2.25 12.1292C1.58333 12.5141 0.75 12.0329 0.75 11.2631V1.73686C0.75 0.967059 1.58333 0.485935 2.25 0.870835L10.5 5.63398Z"
+      fill="#2D1069"
+    />
+  </Svg>
+);
+
 export {
   AskSvg,
   UserSvg,
@@ -428,5 +496,8 @@ export {
   CalculatorSvg,
   VideoSvg,
   BackSvg, 
-  PencilSvg
+  PencilSvg,
+  LineGraphic,
+  CancelSvg,
+  PlaySvg
 };

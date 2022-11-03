@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -15,15 +16,24 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function SignButton({textButton, underButton, underBoldButton}) {
+export default function SignUpButton({textButton, underButton, underBoldButton}) {
+  const navigation = useNavigation();
   return (
     
     <View style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}
+      onPress={()=>{
+          
+            navigation.navigate('Home')
+          
+      }}>
         <Text style={styles.textButton}>{textButton}</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity
+      onPress={()=>{
+          navigation.navigate('SignIn')
+      }}>
         <Text style={styles.textCount}>
           {underButton}{" "}
           <Text style={{ fontFamily: "RobotoMedium" }}>{underBoldButton}</Text>

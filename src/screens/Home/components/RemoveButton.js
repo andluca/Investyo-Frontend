@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         fontSize: RFPercentage(1.2),
         color: "#fff",
         left: 20 * w,
-        textAlign: 'center',
+        textAlign: 'left',
         width: 49*w,
       },
     

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         left: 20 * w,
         textAlign:'left',
-        width:49*w,
+        width:60*w,
         
       },
     

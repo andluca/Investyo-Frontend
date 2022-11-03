@@ -24,6 +24,5 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         top: 52*h,
         position: 'relative',
-        alignSelf: 'center'
     }
 })

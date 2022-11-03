@@ -70,5 +70,11 @@ const profile ={
 
 }
 
+const video ={
+    headerbar:{
+        title: 'Vídeos'
+    }
+}
 
-export {init, home, calculator, signIn, signUp, profile};
+
+export {init, home, calculator, signIn, signUp, profile, video};

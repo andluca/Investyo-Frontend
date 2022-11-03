@@ -2,7 +2,8 @@ import React from "react";
 import {View, StyleSheet, Dimensions, Text } from "react-native";
 //import { Button } from "react-native-elements";
 import { TouchableOpacity } from "react-native";
-import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
+import { RFPercentage } from "react-native-responsive-fontsize";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -11,7 +12,7 @@ const w = 1/428 * width;
 const h = 1/926 * height;
 
 export default function Options({ sin , sup }){
-
+const navigation = useNavigation();
     return(
             <View style={styles.buttons}>
                 {/* <Button buttonStyle={styles.button1}   title={sup} onPress={()=>{
@@ -22,13 +23,15 @@ export default function Options({ sin , sup }){
                     alert("Cadastro");
                 }}/> */}
                 <TouchableOpacity onPress={()=>{
-                    alert("Register");
+
+                    navigation.navigate('SignUp')
+
                 }} style={styles.button1}>
                     <Text style={styles.title2}>{sup}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=>{
-                    alert("Login");
+                    navigation.navigate('SignIn')
                 }} style={styles.button2}>
                     <Text style={styles.title1}>{sin}</Text>
                 </TouchableOpacity>

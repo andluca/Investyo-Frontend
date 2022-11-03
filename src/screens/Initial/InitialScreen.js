@@ -1,16 +1,15 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, StatusBar, View } from "react-native";
+import { StyleSheet, SafeAreaView, View } from "react-native";
 import Options from "./components/Options";
 import Main from "./components/Main";
 
 function InitialScreen({main, options}) {
     return(
 
-        <View style={styles.container}>
-          <StatusBar></StatusBar>
+        <SafeAreaView style={styles.container}>
             <Main {...main}/>
             <Options {...options}/>
-        </View>   
+        </SafeAreaView>   
         
     );
 };

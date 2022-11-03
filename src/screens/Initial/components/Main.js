@@ -9,7 +9,7 @@ const height = Dimensions.get("screen").height;
 const w = 1/428 * width;
 const h = 1/926 * height;
 
-export default function Main({title, homeicon}){
+export default function Main({title}){
     return (
             <>
                 

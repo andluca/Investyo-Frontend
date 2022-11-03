@@ -13,7 +13,6 @@ export default function AssetsBox() {
       style={[
         styles.boxDefinition,
         styles.boxShadow,
-        { top: 80 * h },
       ]}
     >
       <View

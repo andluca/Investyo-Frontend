@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
     boxGradient: {
         width: 386 * w,
         height: 211 * h,
-        top: 53 * h,
         borderRadius: 10,
       },
     
