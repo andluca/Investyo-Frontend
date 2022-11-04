@@ -9,12 +9,12 @@ import {
   Text,
   ScrollView,
   FlatList,
+  Image,
 } from "react-native";
 import HeaderBar, { mode } from "../../components/HeaderBar";
 import NavBar from "../../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import { Thumbnail } from "react-native-thumbnail-video";
 import {
   introduction,
   economy,
@@ -45,41 +45,49 @@ export default function VideosScreen({ headerbar }) {
   });
 
   const renderItem = ({ item }) => {
-    
-
+    const uriVideo = `https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`;
     return (
-      <View
-       style={[styles.videoContainer, { elevation: 10, shadowColor: "#000", shadowOpacity: 2 }]}>
-        <View style={[{ top: 0 * h}, ]}>
-          <Thumbnail
-            showPlayIcon={false}
-            onPress={()=>{
-              navigation.navigate('Player', {
+      <TouchableOpacity
+      onPress={()=>{
+        navigation.navigate('Player', {
                 title:item.title,
                 id:item.id
               })
-            }}
-            imageHeight={150 * h}
-            imageWidth={350 * w}
-            url={item.link}
-          />
+      }}  
+        style={[
+          styles.videoContainer,
+          { elevation: 10, shadowColor: "#000", shadowOpacity: 2 },
+        ]}
+      >
+        <View style={[{ top: 0 * h }]}>
+          <Image
+            source={{ uri: uriVideo }}
+            style={{ height: 180 * h, width: 341 * h }}
+          ></Image>
         </View>
         <Text
           style={{
-            top: 5 * h,
+            top: 10 * h,
             fontSize: RFPercentage(1.9),
             color: "#2D1069",
             fontFamily: "RobotoMedium",
-            textAlign: 'left',
-            left: 10*w,
-            width: 350*w
+            textAlign: "left",
+            left: -15*w,
+            width: 300 * w,
           }}
         >
           {item.title}
         </Text>
-        <PlaySvg style={{left: 150*w, bottom:5*h, maxWidth: 20*w, maxHeight:20*w}}/>
-        
-      </View>
+        <PlaySvg
+          style={{
+            left: 320 * w,
+            bottom: 18 * h,
+            maxWidth: 20 * w,
+            maxHeight: 20 * w,
+            position: "absolute",
+          }}
+        />
+      </TouchableOpacity>
     );
   };
 
@@ -96,15 +104,10 @@ export default function VideosScreen({ headerbar }) {
           <NavBar></NavBar>
         </Animated.View>
         <Animated.View style={{ top: boxY }}>
-          <View
-            style={[
-              styles.categoryContainer,
-              ,
-            ]}
-          >
+          <View style={[styles.categoryContainer, ,]}>
             <Text style={styles.label}>Introdução</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={introduction}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -112,15 +115,10 @@ export default function VideosScreen({ headerbar }) {
               showsHorizontalScrollIndicator={false}
             />
           </View>
-          <View
-            style={[
-              styles.categoryContainer,
-              
-            ]}
-          >
+          <View style={[styles.categoryContainer]}>
             <Text style={styles.label}>Economia</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={economy}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -128,14 +126,10 @@ export default function VideosScreen({ headerbar }) {
               showsHorizontalScrollIndicator={false}
             />
           </View>
-          <View
-            style={[
-              styles.categoryContainer,
-            ]}
-          >
+          <View style={[styles.categoryContainer]}>
             <Text style={styles.label}>Renda Fixa</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={fixed}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -143,14 +137,10 @@ export default function VideosScreen({ headerbar }) {
               showsHorizontalScrollIndicator={false}
             />
           </View>
-          <View
-            style={[
-              styles.categoryContainer,
-            ]}
-          >
+          <View style={[styles.categoryContainer]}>
             <Text style={styles.label}>Ações</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={stock}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -158,14 +148,10 @@ export default function VideosScreen({ headerbar }) {
               showsHorizontalScrollIndicator={false}
             />
           </View>
-          <View
-            style={[
-              styles.categoryContainer,
-            ]}
-          >
+          <View style={[styles.categoryContainer]}>
             <Text style={styles.label}>Fundos Imobiliários</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={realState}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -173,15 +159,10 @@ export default function VideosScreen({ headerbar }) {
               showsHorizontalScrollIndicator={false}
             />
           </View>
-          <View
-            style={[
-              styles.categoryContainer,
-              
-            ]}
-          >
+          <View style={[styles.categoryContainer]}>
             <Text style={styles.label}>Cripto e Ativos Estrangeiros</Text>
             <FlatList
-              style={{ top: 20 * h, maxHeight: 220 * h }}
+              style={styles.listContainer}
               data={crypto}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
@@ -211,12 +192,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   categoryContainer: {
-    height: 280 * h,
+    height: 320 * h,
     width: width,
     backgroundColor: "#fff",
-    left: 20 * w,
-    borderBottomLeftRadius: 10,
-    borderTopLeftRadius: 10,
     marginVertical: 1,
   },
   label: {
@@ -229,7 +207,7 @@ const styles = StyleSheet.create({
 
   videoContainer: {
     width: 350 * w,
-    height: 200 * h,
+    height: 240 * h,
     borderRadius: 10,
     backgroundColor: "#fff",
     marginHorizontal: 10 * w,
@@ -241,4 +219,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 2,
   },
+  listContainer: { 
+    top: 20 * h, 
+    maxHeight: 270 * h },
 });

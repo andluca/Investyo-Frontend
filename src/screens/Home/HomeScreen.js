@@ -4,7 +4,8 @@ import {
   Dimensions,
   StyleSheet,
   View,
-  SafeAreaView
+  SafeAreaView,
+  Image
 } from "react-native";
 import HeaderBar, { mode } from "../../components/HeaderBar";
 import NavBar from "../../components/NavBar";
@@ -64,6 +65,8 @@ export default function HomeScreen({balancebox, headerbar}) {
         <AssetsBox/>
       </View>
       </Animated.View>
+
+      
       
 
     </SafeAreaView>
