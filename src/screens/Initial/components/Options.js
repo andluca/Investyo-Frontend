@@ -32,6 +32,7 @@ const navigation = useNavigation();
 
                 <TouchableOpacity onPress={()=>{
                     navigation.navigate('SignIn')
+                    
                 }} style={styles.button2}>
                     <Text style={styles.title1}>{sin}</Text>
                 </TouchableOpacity>

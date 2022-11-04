@@ -133,7 +133,7 @@ export default function CalculatorScreen({ headerbar }) {
                             style={styles.input}
                             placeholder="0.00"
                             onChangeText={(newText) => setInitValue(newText)}
-                            defaultValue={initialValue}
+                            defaultValue={initialValue.toString()}
                             keyboardType="numeric"
                           />
                         </View>
@@ -359,7 +359,7 @@ export default function CalculatorScreen({ headerbar }) {
                 { backgroundColor: "#fff", flex: 1, alignItems: 'center',  justifyContent: 'center'},
               ]}
             >
-              <FlatList style={{margin: 10}} nestedScrollEnabled numColumns={3} data={arr} renderItem={renderItem} />
+              <FlatList horizontal={true} style={{ flexWrap: 'nowrap'}} nestedScrollEnabled data={arr} renderItem={renderItem} />
             </View>
           </View>
         </View>

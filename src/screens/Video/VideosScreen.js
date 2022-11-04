@@ -72,12 +72,12 @@ export default function VideosScreen({ headerbar }) {
             fontFamily: "RobotoMedium",
             textAlign: 'left',
             left: 10*w,
-            width: 350*w
+            width: 320*w
           }}
         >
           {item.title}
         </Text>
-        <PlaySvg style={{left: 150*w, bottom:5*h, maxWidth: 20*w, maxHeight:20*w}}/>
+        <PlaySvg style={{left: 320*w, bottom:10*h, maxWidth: 20*w, maxHeight:20*w, position: 'absolute'}}/>
         
       </View>
     );
