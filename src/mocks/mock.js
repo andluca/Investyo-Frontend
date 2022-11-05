@@ -16,6 +16,9 @@ const init = {
 const home ={
     headerbar: {
         title: "Carteira",
+        description: "Essa tela possui o propósito de te ajudar a simular uma carteira de investimentos, aqui você poderá simular a compra de ações, títulos de renda fixa e até criptomoedas, além de poder definir um 'orçamento' pré-estabelecido"
+        
+        
     },
     balancebox:{
         text1: "PATRIMÔNIO",
@@ -24,7 +27,8 @@ const home ={
 
 const calculator ={
     headerbar: {
-        title: "Calculadora"
+        title: "Calculadora",
+        description: "Como o próprio nome diz, trata-se de uma calculadora de juros composto, irá te auxiliar à enxergar o efeito de bola de neve dos juros e permitirá uma maior facilidade no planejamento financeiro, excluindo a necessidade uma planilha para isso"
     },
 
 } 
@@ -72,8 +76,10 @@ const profile ={
 
 const video ={
     headerbar:{
-        title: 'Vídeos'
+        title: 'Vídeos',
+        description: "Voltada ao auxílio do usuário em relação à educação financeira, essa tela reúne diveros vídeos sobre finanças de desenvolvedores de conteúdo confiáveis, os vídeos possuem uma ordem lógica para sua progressão, da introdução à assuntos mais específicos como criptomoedas."
     }
+    
 }
 
 

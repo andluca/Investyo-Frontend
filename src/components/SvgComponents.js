@@ -21,22 +21,32 @@ const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
 const AskSvg = (props) => (
-  <Svg
-    width={24}
-    height={24}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <Circle cx={12} cy={12} r={11} stroke="#5B2FB6" strokeWidth={2} />
-    <Path
-      d="M8.571 7.719a3.855 3.855 0 0 1 7.493 1.285c0 2.57-3.856 3.856-3.856 3.856M12.312 18h.012"
-      stroke="#5B2FB6"
-      strokeWidth={3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </Svg>
+  
+    <Svg
+      width={240}
+      height={240}
+      viewBox="0 0 240 240"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <Circle cx={120} cy={120} r={110} stroke="#5B2FB6" strokeWidth={20} />
+      <Path
+        d="M85.7129 77.1887C88.7343 68.5997 94.698 61.3571 102.548 56.7437C110.397 52.1304 119.627 50.444 128.601 51.9832C137.575 53.5225 145.714 58.1881 151.578 65.1537C157.441 72.1192 160.651 80.9352 160.637 90.0402C160.637 115.743 122.083 128.595 122.083 128.595"
+        stroke="#5B2FB6"
+        strokeWidth={30}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M123.115 180H123.244"
+        stroke="#5B2FB6"
+        strokeWidth={30}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  
 );
 
 const UserSvg = (props) => {

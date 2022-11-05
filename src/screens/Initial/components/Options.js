@@ -4,6 +4,8 @@ import {View, StyleSheet, Dimensions, Text } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { useNavigation } from "@react-navigation/native";
+import axios from 'axios';
+const baseUrl = 'https://03fa-201-182-107-196.sa.ngrok.io';
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -25,6 +27,9 @@ const navigation = useNavigation();
                 <TouchableOpacity onPress={()=>{
 
                     navigation.navigate('SignUp')
+                    axios.get(`${baseUrl}`).then((response) => {
+                        console.log(response.data);
+                      });
 
                 }} style={styles.button1}>
                     <Text style={styles.title2}>{sup}</Text>
