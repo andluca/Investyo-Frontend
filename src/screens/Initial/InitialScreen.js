@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import Options from "./components/Options";
 import Main from "./components/Main";
@@ -9,6 +9,8 @@ function InitialScreen({main, options}) {
         <SafeAreaView style={styles.container}>
             <Main {...main}/>
             <Options {...options}/>
+
+            
         </SafeAreaView>   
         
     );

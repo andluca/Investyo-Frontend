@@ -9,6 +9,9 @@ import {
 
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { useNavigation } from "@react-navigation/native";
+import { useContext } from "react";
+import { LoginContext } from "../../../Context/LoginContext";
+import { Alert } from "react-native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -16,15 +19,25 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function SignInButton({textButton, underButton, underBoldButton}) {
+
+
+export default function SignInButton({textButton, underButton, underBoldButton, handleLogin}) {
+  
+  const {token} = useContext(LoginContext)
+
   const navigation = useNavigation();
+  
   return (
     
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button}
-      onPress={()=>{
+      onPress={async()=>{
           
+           
+           if(await handleLogin()){
             navigation.navigate('Home')
+           }
+
           
       }}>
         <Text style={styles.textButton}>{textButton}</Text>

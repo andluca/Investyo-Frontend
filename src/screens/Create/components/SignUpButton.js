@@ -16,15 +16,17 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function SignUpButton({textButton, underButton, underBoldButton}) {
+export default function SignUpButton({textButton, underButton, underBoldButton, handleRegister}) {
   const navigation = useNavigation();
   return (
     
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button}
-      onPress={()=>{
+      onPress={async()=>{
           
-            navigation.navigate('Home')
+            
+          if(await handleRegister()) 
+          navigation.navigate('SignIn')
           
       }}>
         <Text style={styles.textButton}>{textButton}</Text>
