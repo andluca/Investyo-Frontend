@@ -144,6 +144,15 @@ const LoginContextProvider = ({ children }) => {
     }
   };
 
+  const getProfile = async () => {
+    try {
+      const acessAxios = await getAcessAxios(acessToken);
+      return await (await acessAxios.get("/profile")).data;
+    } catch (error) {
+      Alert.alert(error);
+    }
+  }
+
   const getProfileWallet = async () => {
     try {
       const acessAxios = await getAcessAxios(acessToken);
@@ -247,6 +256,7 @@ const LoginContextProvider = ({ children }) => {
         addBalance,
         performOperationBuy,
         performOperationSell,
+        getProfile
       }}
     >
       {children}

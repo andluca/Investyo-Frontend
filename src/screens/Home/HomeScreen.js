@@ -22,49 +22,48 @@ const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
 export default function HomeScreen({ balancebox, headerbar }) {
-  const { getProfileWallet, performOperationSell, performOperationBuy } = useContext(LoginContext);
+  const { getProfile, performOperationSell, performOperationBuy } =
+    useContext(LoginContext);
   const [balance, setBalance] = useState(0);
-  const [symbol, setSymbol] = useState('');
+  const [symbol, setSymbol] = useState("");
   const [quantity, setQuantity] = useState(0);
-  
+
   const removeRef = useRef();
   const addRef = useRef();
   var logged = true;
 
-  
+  const refreshScreen = () => {
+    const initApp = async () => {
+      try {
+        var balanceeffect = await getProfile();
+        const balanceValue = balanceeffect.balance;
+        setBalance(balanceValue);
+      } catch (error) {
+        logged = false;
+        console.log(logged);
+      }
+    };
 
-  // const refreshScreen = () => {
-  //   const initApp = async () => {
-  //     try {
-  //       var balanceeffect = await getProfileWallet();
-  //       const balanceValue = balanceeffect.balance;
-  //       setBalance(balanceValue);
-  //     } catch (error) {
-  //       logged=false;
-  //       console.log(logged)
-  //     }
-  //   };
+    initApp();
 
-  //   initApp();
+    if (logged) {
+      console.log(logged);
+      setTimeout(refreshScreen, 5000);
+    }
+  };
 
-  //   if (logged) {
-  //     console.log(logged);
-  //     setTimeout(refreshScreen, 5000);
-  //   }
-  // };
+  useEffect(() => {
+    setTimeout(() => {
+      refreshScreen();
+    }, 5000);
+  }, []);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     refreshScreen();
-  //   }, 5000);
-  // }, []);
-
-  const sellAsset = async (symbol, quantity) =>{
+  const sellAsset = async (symbol, quantity) => {
     performOperationSell(symbol, quantity);
-  }
-  const buyAsset = async(symbol, quantity) =>{
+  };
+  const buyAsset = async (symbol, quantity) => {
     await performOperationBuy(symbol, quantity);
-  }
+  };
 
   const navY = mode.interpolate({
     inputRange: [0, 1],
@@ -89,9 +88,9 @@ export default function HomeScreen({ balancebox, headerbar }) {
         <BalanceBox setBalance={setBalance} balance={balance} {...balancebox} />
 
         <View style={[styles.optionsStyle]}>
-          <AddButton addRef={addRef}/>
+          <AddButton addRef={addRef} />
 
-          <RemoveButton removeRef ={removeRef}/>
+          <RemoveButton removeRef={removeRef} />
 
           <ExtractButton />
         </View>
@@ -107,7 +106,8 @@ export default function HomeScreen({ balancebox, headerbar }) {
         ref={removeRef}
         backdropPressToClose={true}
         style={[
-          {height: 300 * h,
+          {
+            height: 300 * h,
             width: 380 * w,
             bottom: 100 * h,
             borderRadius: 5,
@@ -122,20 +122,20 @@ export default function HomeScreen({ balancebox, headerbar }) {
           }}
         >
           <View
-          style={[
-            {
-              width: 13 * h,
-              height: 13 * h,
-              borderLeftWidth: 2,
-              borderTopWidth: 2,
-              borderColor: "#fff",
-              rotation: 225,
-              position: "absolute",
-              top: 15 * h,
-              left: 340 * w,
-            },
-          ]}
-        ></View>
+            style={[
+              {
+                width: 13 * h,
+                height: 13 * h,
+                borderLeftWidth: 2,
+                borderTopWidth: 2,
+                borderColor: "#fff",
+                rotation: 225,
+                position: "absolute",
+                top: 15 * h,
+                left: 340 * w,
+              },
+            ]}
+          ></View>
         </TouchableOpacity>
         <Text
           style={{
@@ -194,9 +194,9 @@ export default function HomeScreen({ balancebox, headerbar }) {
         ></TextInput>
 
         <TouchableOpacity
-        onPress={async()=>{
-          await sellAsset(symbol, quantity)
-        }}
+          onPress={async () => {
+            await sellAsset(symbol, quantity);
+          }}
           style={[
             {
               top: 100 * h,
@@ -239,24 +239,26 @@ export default function HomeScreen({ balancebox, headerbar }) {
           { elevation: 100, shadowColor: "#000", shadowOpacity: 2 },
         ]}
       >
-        <TouchableOpacity onPress={()=>{
-          addRef.current.close();
-        }}>
-        <View
-          style={[
-            {
-              width: 13 * h,
-              height: 13 * h,
-              borderLeftWidth: 2,
-              borderTopWidth: 2,
-              borderColor: "#fff",
-              rotation: 225,
-              position: "absolute",
-              top: 15 * h,
-              left: 340 * w,
-            },
-          ]}
-        ></View>
+        <TouchableOpacity
+          onPress={() => {
+            addRef.current.close();
+          }}
+        >
+          <View
+            style={[
+              {
+                width: 13 * h,
+                height: 13 * h,
+                borderLeftWidth: 2,
+                borderTopWidth: 2,
+                borderColor: "#fff",
+                rotation: 225,
+                position: "absolute",
+                top: 15 * h,
+                left: 340 * w,
+              },
+            ]}
+          ></View>
         </TouchableOpacity>
 
         <Text
@@ -316,11 +318,10 @@ export default function HomeScreen({ balancebox, headerbar }) {
         ></TextInput>
 
         <TouchableOpacity
-          onPress={async()=>{
+          onPress={async () => {
             await buyAsset(symbol, quantity);
             addRef.current.close();
           }}
-
           style={[
             {
               top: 100 * h,
@@ -347,7 +348,6 @@ export default function HomeScreen({ balancebox, headerbar }) {
           </Text>
         </TouchableOpacity>
       </Modal>
-
     </SafeAreaView>
   );
 }
