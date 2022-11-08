@@ -16,7 +16,7 @@ const init = {
 const home ={
     headerbar: {
         title: "Carteira",
-        description: "Essa tela possui o propósito de te ajudar a simular uma carteira de investimentos, aqui você poderá simular a compra de ações, títulos de renda fixa e até criptomoedas, além de poder definir um 'orçamento' pré-estabelecido"
+        description: "Aqui mora o corpo do aplicativo, um sistema que te permite inserir um valor equivalente ao seu patrimônio, e simular a compra de ações."
         
         
     },
@@ -28,7 +28,7 @@ const home ={
 const calculator ={
     headerbar: {
         title: "Calculadora",
-        description: "Como o próprio nome diz, trata-se de uma calculadora de juros composto, irá te auxiliar à enxergar o efeito de bola de neve dos juros e permitirá uma maior facilidade no planejamento financeiro, excluindo a necessidade uma planilha para isso"
+        description: "Uma calculadora de juros compostos para te auxiliar a enxergar o poder dos juros compostos ao longo do tempo, basta inserir um valor mensal, uma taxa de juros mensal e a quantidade de meses. Dica : A taxa básica de juros atual é 1.11% ao mês"
     },
 
 } 
@@ -57,30 +57,26 @@ const signUp = {
     }
 }
 
-const profile ={
-    headerbar:{
-        title: 'Conta'
-    },
-    informations:{
-        labelName: 'Nome de usuário',
-        name: 'AndLu',
-        labelBalanceInvested: 'Patrimônio Investido',
-        invested: '200.00',
-        labelTotalBalance: 'Patrimônio total',
-        total: '258.27',
-        experienceLevel: 'Nível de conhecimento',
-        level: 'Iniciante'
-    }
 
-}
 
 const video ={
     headerbar:{
         title: 'Vídeos',
-        description: "Voltada ao auxílio do usuário em relação à educação financeira, essa tela reúne diveros vídeos sobre finanças de desenvolvedores de conteúdo confiáveis, os vídeos possuem uma ordem lógica para sua progressão, da introdução à assuntos mais específicos como criptomoedas."
+        description: "Essa tela é voltada ao seu aprendizado, basta escolher uma categoria e assistir um dos vídeos escolhidos a dedo por nós, boa experiência!"
     }
     
 }
+const extract={
+    headerbar:{
+        title:"Extrato"
+    }
+}
+
+const assets={
+    headerbar:{
+        title: "Ativos"
+    }
+}
 
 
-export {init, home, calculator, signIn, signUp, profile, video};
+export {init, home, calculator, signIn, signUp, extract, video, assets};

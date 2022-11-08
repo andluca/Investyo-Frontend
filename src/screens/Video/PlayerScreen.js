@@ -8,9 +8,9 @@ import {
   Alert,
 } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
-import { Icon } from "react-native-elements";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -18,10 +18,10 @@ const height = Dimensions.get("screen").height;
 const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
-export default function PlayerScreen({  title, id}) {
+export default function PlayerScreen({ title, id }) {
   const [playing, setPlaying] = useState(false);
   const [isMute, setMute] = useState(false);
-  9;
+  
   const controlRef = useRef();
 
   const onStateChange = (state) => {
@@ -31,39 +31,47 @@ export default function PlayerScreen({  title, id}) {
       Alert.alert("Vídeo concluído! Obrigado");
     }
     if (state !== "playing") {
-      
       setPlaying(false);
-      
     }
   };
 
-
-
   const navigation = useNavigation();
-
 
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.videoContainer}>
+        <YoutubePlayer
+          ref={controlRef}
+          play={playing}
+          mute={isMute}
+          onChangeState={onStateChange}
+          height={250 * h}
+          width={width}
+          videoId={id}
+        />
 
-      
-        <View style={styles.videoContainer}>
-          <YoutubePlayer
-            ref={controlRef}
-            play={playing}
-            mute={isMute}
-            onChangeState={onStateChange}
-            height={250 * h}
-            width={width}
-            videoId={id}
-          />
+        <Text style={styles.title}>{title}</Text>
+      </View>
+      <TouchableOpacity onPress={()=>{
+        navigation.navigate('Video')
+      }} style={{position: 'absolute', top: 800*h,left: 50*w}}>
 
-        <Text style={styles.title}>
-                    {title}
-                </Text>
-
-          
-        </View>
-      
+        <View
+          style={{ width: 50 * w, height: 10 * h, backgroundColor: "#2D1069" }}
+        ></View>
+        <View
+          style={{
+            top: -20 * h,
+            right: 5 * w,
+            height: 30 * h,
+            width: 30 * h,
+            borderColor: "#2D1069",
+            borderStartWidth: 10 * h,
+            borderBottomWidth: 10 * h,
+            rotation: 45,
+          }}
+        ></View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -78,18 +86,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
-  title:{
-    fontFamily: 'RobotoMedium',
+  title: {
+    fontFamily: "RobotoMedium",
     fontSize: RFPercentage(3),
-    color: '#2D1069',
-    top: 1*h,
-    width: 400*w,
-    textAlign: 'center'
-    
-
+    color: "#2D1069",
+    top: 1 * h,
+    width: 400 * w,
+    textAlign: "center",
   },
-  videoContainer:{
-    top: 0*h,
-    alignItems: 'center'
-  }
+  videoContainer: {
+    top: 0 * h,
+    alignItems: "center",
+  },
 });

@@ -65,31 +65,32 @@ export default function CalculatorScreen({ headerbar }) {
     outputRange: [70, 156],
   });
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
-      
       <View
-        style={[{
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#fff",
-          marginHorizontal: 5 * w,
-          width: 110 * w,
-          height: 50 * h,
-          marginVertical: 10 * h,
-          borderRadius: 10
-
-        }, {elevation: 15, shadowColor: '#000', shadowOpacity: 2}]}
+        style={[
+          {
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#fff",
+            marginHorizontal: 5 * w,
+            width: 110 * w,
+            height: 50 * h,
+            marginVertical: 10 * h,
+            borderRadius: 10,
+          },
+          { elevation: 15, shadowColor: "#000", shadowOpacity: 2 },
+        ]}
       >
         <Text
           style={{
             fontFamily: "RobotoMedium",
             fontSize: RFPercentage(1.8),
             color: "#5B2FB6",
-            fontWeight: 'bold'
+            fontWeight: "bold",
           }}
         >
-          R${' '}{item}
+          R$ {item}
         </Text>
       </View>
     );
@@ -213,12 +214,39 @@ export default function CalculatorScreen({ headerbar }) {
                         </View>
                       </View>
                     </View>
-                    <View style={{top: 298 * h, flexDirection: 'row'}}>
-                      <View style={{height: 47*h, bottom: 35*h, left: 30*w}}>
-                        <Text style={{fontFamily: 'RobotoLight', fontSize: RFPercentage(1.7), color: '#5B2FB6', lineHeight: 20*h}}>
+                    <View style={{ top: 298 * h, flexDirection: "row" }}>
+                      <View
+                        style={{ height: 47 * h, bottom: 35 * h, left: 30 * w }}
+                      >
+                        <Text
+                          style={{
+                            fontFamily: "RobotoLight",
+                            fontSize: RFPercentage(1.7),
+                            color: "#5B2FB6",
+                            lineHeight: 20 * h,
+                          }}
+                        >
                           Resultado:
                         </Text>
-                        <Text style={{fontFamily: 'RobotoMedium', fontSize: RFPercentage(1.7), color: '#5B2FB6', height: 30*h}}>R$<Text style={{fontFamily: 'RobotoMedium', fontSize: RFPercentage(2.8), color: '#5B2FB6'}}>{arr[period]}</Text></Text>
+                        <Text
+                          style={{
+                            fontFamily: "RobotoMedium",
+                            fontSize: RFPercentage(1.7),
+                            color: "#5B2FB6",
+                            height: 30 * h,
+                          }}
+                        >
+                          R$
+                          <Text
+                            style={{
+                              fontFamily: "RobotoMedium",
+                              fontSize: RFPercentage(2.8),
+                              color: "#5B2FB6",
+                            }}
+                          >
+                            {arr[period]}
+                          </Text>
+                        </Text>
                       </View>
                       <TouchableOpacity
                         onPress={() => {
@@ -231,14 +259,13 @@ export default function CalculatorScreen({ headerbar }) {
                         <Text style={{ color: "#fff" }}>Calcular</Text>
                       </TouchableOpacity>
                     </View>
-
                   </View>
                 </View>
               </View>
             </View>
           </View>
         </View>
-                        
+
         <View style={{ top: 40 * h, opacity: opacity }}>
           <View style={[styles.box, styles.boxShadow]}>
             <View style={[styles.box, styles.boxShadow]}>
@@ -356,10 +383,21 @@ export default function CalculatorScreen({ headerbar }) {
                 styles.box,
                 ,
                 styles.boxShadow,
-                { backgroundColor: "#fff", flex: 1, alignItems: 'center',  justifyContent: 'center'},
+                {
+                  backgroundColor: "#fff",
+                  flex: 1,
+                  alignItems: "center",
+                  justifyContent: "center",
+                },
               ]}
             >
-              <FlatList style={{margin: 10}} nestedScrollEnabled numColumns={3} data={arr} renderItem={renderItem} />
+              <FlatList
+                style={{ margin: 10 }}
+                nestedScrollEnabled
+                numColumns={3}
+                data={arr}
+                renderItem={renderItem}
+              />
             </View>
           </View>
         </View>
@@ -373,46 +411,45 @@ export default function CalculatorScreen({ headerbar }) {
               alignItems: "center",
               backgroundColor: "#fff",
               borderRadius: 10,
-              opacity: opacity
+              opacity: opacity,
             },
             { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
           ]}
         >
-        <View
-          style={[
-            {
-              
-              width: 386 * w,
-              height: 100 * h,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#fff",
-              borderRadius: 10,
-            },
-            { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
-          ]}
-        >
-          <Text
-            style={{
-              textAlign: "center",
-              width: 370 * w,
-              color: "#5413A6",
-              fontFamily: "RobotoLight",
-              fontSize: RFPercentage(2.4),
-            }}
+          <View
+            style={[
+              {
+                width: 386 * w,
+                height: 100 * h,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#fff",
+                borderRadius: 10,
+              },
+              { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
+            ]}
           >
-            Valor investido:{" "}
             <Text
               style={{
-                fontFamily: "RobotoMedium",
-                fontSize: RFPercentage(2.5),
+                textAlign: "center",
+                width: 370 * w,
                 color: "#5413A6",
+                fontFamily: "RobotoLight",
+                fontSize: RFPercentage(2.4),
               }}
             >
-              R${' '}{period*monthValue}
+              Valor investido:{" "}
+              <Text
+                style={{
+                  fontFamily: "RobotoMedium",
+                  fontSize: RFPercentage(2.5),
+                  color: "#5413A6",
+                }}
+              >
+                R$ {period * monthValue}
+              </Text>
             </Text>
-          </Text>
-        </View>
+          </View>
         </View>
         <View
           style={[
@@ -424,45 +461,45 @@ export default function CalculatorScreen({ headerbar }) {
               alignItems: "center",
               backgroundColor: "#5413A6",
               borderRadius: 10,
-              opacity: opacity
+              opacity: opacity,
             },
             { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
           ]}
         >
-        <View
-          style={[
-            {
-              width: 386 * w,
-              height: 100 * h,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#5413A6",
-              borderRadius: 10,
-            },
-            { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
-          ]}
-        >
-          <Text
-            style={{
-              textAlign: "center",
-              width: 370 * w,
-              color: "#fff",
-              fontFamily: "RobotoLight",
-              fontSize: RFPercentage(2.4),
-            }}
+          <View
+            style={[
+              {
+                width: 386 * w,
+                height: 100 * h,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#5413A6",
+                borderRadius: 10,
+              },
+              { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
+            ]}
           >
-            Patrimônio final:{" "}
             <Text
               style={{
-                fontFamily: "RobotoMedium",
-                fontSize: RFPercentage(2.5),
+                textAlign: "center",
+                width: 370 * w,
                 color: "#fff",
+                fontFamily: "RobotoLight",
+                fontSize: RFPercentage(2.4),
               }}
             >
-              R${' '}{arr[period]}
+              Patrimônio final:{" "}
+              <Text
+                style={{
+                  fontFamily: "RobotoMedium",
+                  fontSize: RFPercentage(2.5),
+                  color: "#fff",
+                }}
+              >
+                R$ {arr[period]}
+              </Text>
             </Text>
-          </Text>
-        </View>
+          </View>
         </View>
         <View
           style={[
@@ -474,48 +511,46 @@ export default function CalculatorScreen({ headerbar }) {
               alignItems: "center",
               backgroundColor: "#5413A6",
               borderRadius: 10,
-              opacity: opacity
+              opacity: opacity,
             },
             { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
           ]}
         >
-        <View
-          style={[
-            {
-              width: 386 * w,
-              height: 100 * h,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#1C0632",
-              borderRadius: 10,
-            },
-            { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
-          ]}
-        >
-          <Text
-            style={{
-              textAlign: "center",
-              width: 370 * w,
-              color: "#fff",
-              fontFamily: "RobotoLight",
-              fontSize: RFPercentage(2.4),
-            }}
+          <View
+            style={[
+              {
+                width: 386 * w,
+                height: 100 * h,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#1C0632",
+                borderRadius: 10,
+              },
+              { elevation: 10, shadowColor: "#000", shadowOpacity: 8 },
+            ]}
           >
-            Total em juros:{" "}
             <Text
               style={{
-                fontFamily: "RobotoMedium",
-                fontSize: RFPercentage(2.5),
+                textAlign: "center",
+                width: 370 * w,
                 color: "#fff",
+                fontFamily: "RobotoLight",
+                fontSize: RFPercentage(2.4),
               }}
             >
-              R${' '}{Math.round(arr[period] - (period*monthValue))}
+              Total em juros:{" "}
+              <Text
+                style={{
+                  fontFamily: "RobotoMedium",
+                  fontSize: RFPercentage(2.5),
+                  color: "#fff",
+                }}
+              >
+                R$ {Math.round(arr[period] - period * monthValue)}
+              </Text>
             </Text>
-          </Text>
+          </View>
         </View>
-        </View>
-        
-        
 
         <View style={{ position: "relative", top: 140 * h, opacity: 0 }}>
           <Text>Olá Mundo</Text>
@@ -539,7 +574,6 @@ export default function CalculatorScreen({ headerbar }) {
       <Animated.View style={{ position: "absolute", top: navY }}>
         <NavBar />
       </Animated.View>
-      
     </ScrollView>
   );
 }
@@ -574,9 +608,9 @@ const styles = StyleSheet.create({
 
   button: {
     position: "absolute",
-    right: 25*w,
+    right: 25 * w,
     width: 109 * w,
-    bottom: 30*h,
+    bottom: 30 * h,
     height: 36 * h,
     backgroundColor: "#5B2FB6",
     borderRadius: 10,

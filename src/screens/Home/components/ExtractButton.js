@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { View, TouchableOpacity, Text, Dimensions } from "react-native";
 import { ExtractSvg } from "../../../components/SvgComponents";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -11,6 +12,7 @@ const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
 export default function ExtractButton(){
+  const navigation = useNavigation();
     return(
         <View
           style={[
@@ -29,7 +31,9 @@ export default function ExtractButton(){
               <View
                 style={[styles.buttonOptionsStyle, styles.buttonOptionsShadow]}
               >
-                <TouchableOpacity style={styles.extractStyle}>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate('Extract')
+                }} style={styles.extractStyle}>
 
                   <ExtractSvg style={styles.svgOptions} />
 
@@ -70,9 +74,9 @@ const styles = StyleSheet.create({
       },
 
       textOptions: {
-        fontSize: RFPercentage(1.2),
+        fontSize: RFPercentage(1.41),
         color: "#fff",
-        left: 20 * w,
+        left: 18 * w,
         bottom: 6*h,
       },
 

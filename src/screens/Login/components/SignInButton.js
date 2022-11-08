@@ -34,9 +34,9 @@ export default function SignInButton({textButton, underButton, underBoldButton, 
       onPress={async()=>{
           
            
-           if(await handleLogin()){
-            navigation.navigate('Home')
-           }
+            if(await handleLogin()){
+            await navigation.navigate('Home')
+            }
 
           
       }}>

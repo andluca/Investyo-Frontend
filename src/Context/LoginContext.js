@@ -12,13 +12,12 @@ const cache = new Cache({
   backend: AsyncStorage,
 });
 
-cache.set("url", "https://7f72-201-182-107-196.sa.ngrok.io/");
+cache.set("url", "https://d4f9-2804-389-2021-6c59-d148-390b-48a3-6e53.sa.ngrok.io/");
 
 export const LoginContext = createContext();
 
 const LoginContextProvider = ({ children }) => {
   const [acessToken, setAcessToken] = useState("");
-
   const getAcessAxios = async (acessToken) => {
     const url = await getUrl();
 
@@ -68,15 +67,18 @@ const LoginContextProvider = ({ children }) => {
       acessAxios.post("/logout", {
         refreshToken,
       });
+
     } catch (error) {
       Alert.alert(error);
+      
     }
   };
 
   const performOperationBuy = async (symbol, quantity) => {
     try {
+      console.log('Certo')
       const acessAxios = await getAcessAxios(acessToken);
-      acessAxios.post("/perform_operation", {
+      return await acessAxios.post("/perform_operation", {
         operationType: "buyAsset",
         symbol,
         quantity
@@ -126,16 +128,17 @@ const LoginContextProvider = ({ children }) => {
   const searchByName = async (name) => {
     try {
       const acessAxios = await getAcessAxios(acessToken);
-      return await acessAxios.get(`/api/search_name?name=${name}`);
+      const response = await acessAxios.get(`/api/search_name?name=${name}`);
+      return await response.data
     } catch (error) {
-      Alert.alert(error);
+      Alert.alert(error + "Search failure");
     }
   };
 
-  const getHistoricalValues = async (days) => {
+  const getHistoricalValues = async (symbol, days) => {
     try {
       const acessAxios = await getAcessAxios(acessToken);
-      return await acessAxios.get(`/api/historical_values?days=${days}`);
+      return await acessAxios.get(`/api/historical_values?days=${days}&symbol=${symbol}`);
     } catch (error) {
       Alert.alert(error);
     }
@@ -144,13 +147,14 @@ const LoginContextProvider = ({ children }) => {
   const getProfileWallet = async () => {
     try {
       const acessAxios = await getAcessAxios(acessToken);
-      return await acessAxios.get("/profile/wallet");
+      return await (await acessAxios.get("/profile/wallet")).data;
     } catch (error) {
       Alert.alert(error);
+      
     }
   };
 
-  const getProfisleExtracts = async () => {
+  const getProfileExtracts = async () => {
     try {
       const acessAxios = await getAcessAxios(acessToken);
       return await acessAxios.get("/profile/extract");
@@ -173,6 +177,7 @@ const LoginContextProvider = ({ children }) => {
       await addToCache("refreshToken", refreshToken);
 
       await setAcessToken(AcessToken);
+
 
       return true;
     } catch (error) {
@@ -234,14 +239,14 @@ const LoginContextProvider = ({ children }) => {
         doLogin,
         doRegister,
         doLogout,
-        getProfisleExtracts,
+        getProfileExtracts,
         getProfileWallet,
         getHistoricalValues,
         searchByName,
         withdrawBalance,
         addBalance,
         performOperationBuy,
-        performOperationSell
+        performOperationSell,
       }}
     >
       {children}

@@ -5,9 +5,14 @@ import { Defs, LinearGradient, Stop } from "react-native-svg";
 export const Gradient = () => (
     
 <Defs>
-    <LinearGradient id={"gradient"} x1={"0%"} y1={"0%"} x2={"0%"} y2={"100%"}>
-      <Stop offset={"0%"} stopColor={"rgb(194, 65, 244)"} stopOpacity={0.8} />
-      <Stop offset={"100%"} stopColor={"rgb(134, 65, 244)"} stopOpacity={0.2} />
+    <LinearGradient id={"gradient"} x1={"100%"} y1={"100%"} x2={"0%"} y2={"0%"}>
+      <Stop offset={"0%"} stopColor={"#5B2FB6"} />
+      <Stop offset={"20%"} stopColor={"#482398"} />
+      <Stop offset={"40%"} stopColor={'#6838CC'}/>
+      <Stop offset={"60%"} stopColor={'#572BA9'}/>
+      <Stop offset={"80%"} stopColor={'#2E1163'}/>
+      <Stop offset={"100%"} stopColor={"#1C0632"} />
+
     </LinearGradient>
   </Defs>
     

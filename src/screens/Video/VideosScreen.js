@@ -62,7 +62,7 @@ export default function VideosScreen({ headerbar }) {
         <View style={[{ top: 0 * h }]}>
           <Image
             source={{ uri: uriVideo }}
-            style={{ height: 180 * h, width: 341 * h }}
+            style={{ height: 180 * h, width: 350 * w,}}
           ></Image>
         </View>
         <Text

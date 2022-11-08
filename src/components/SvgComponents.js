@@ -21,32 +21,30 @@ const w = (1 / 428) * width;
 const h = (1 / 926) * height;
 
 const AskSvg = (props) => (
-  
-    <Svg
-      width={240}
-      height={240}
-      viewBox="0 0 240 240"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <Circle cx={120} cy={120} r={110} stroke="#5B2FB6" strokeWidth={20} />
-      <Path
-        d="M85.7129 77.1887C88.7343 68.5997 94.698 61.3571 102.548 56.7437C110.397 52.1304 119.627 50.444 128.601 51.9832C137.575 53.5225 145.714 58.1881 151.578 65.1537C157.441 72.1192 160.651 80.9352 160.637 90.0402C160.637 115.743 122.083 128.595 122.083 128.595"
-        stroke="#5B2FB6"
-        strokeWidth={30}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <Path
-        d="M123.115 180H123.244"
-        stroke="#5B2FB6"
-        strokeWidth={30}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </Svg>
-  
+  <Svg
+    width={240}
+    height={240}
+    viewBox="0 0 240 240"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Circle cx={120} cy={120} r={110} stroke="#5B2FB6" strokeWidth={20} />
+    <Path
+      d="M85.7129 77.1887C88.7343 68.5997 94.698 61.3571 102.548 56.7437C110.397 52.1304 119.627 50.444 128.601 51.9832C137.575 53.5225 145.714 58.1881 151.578 65.1537C157.441 72.1192 160.651 80.9352 160.637 90.0402C160.637 115.743 122.083 128.595 122.083 128.595"
+      stroke="#5B2FB6"
+      strokeWidth={30}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <Path
+      d="M123.115 180H123.244"
+      stroke="#5B2FB6"
+      strokeWidth={30}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
 );
 
 const UserSvg = (props) => {
@@ -271,6 +269,31 @@ const EyesOffSvg = (props) => (
     </Defs>
   </Svg>
 );
+const EyesOnSvg = (props) => (
+  <Svg
+    width={24}
+    height={18}
+    viewBox="0 0 24 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M17.94 14.94C16.2306 16.243 14.1491 16.9649 12 17C5 17 1 9.00002 1 9.00002C2.24389 6.68192 3.96914 4.65663 6.06 3.06003M9.9 1.24002C10.5883 1.0789 11.2931 0.998364 12 1.00003C19 1.00003 23 9.00002 23 9.00002C22.393 10.1356 21.6691 11.2048 20.84 12.19M14.12 11.12C13.8454 11.4148 13.5141 11.6512 13.1462 11.8151C12.7782 11.9791 12.3809 12.0673 11.9781 12.0744C11.5753 12.0815 11.1752 12.0074 10.8016 11.8565C10.4281 11.7056 10.0887 11.4811 9.80385 11.1962C9.51897 10.9113 9.29439 10.572 9.14351 10.1984C8.99262 9.82486 8.91853 9.42475 8.92563 9.02193C8.93274 8.61912 9.02091 8.22187 9.18488 7.85387C9.34884 7.48588 9.58525 7.15467 9.88 6.88003"
+      stroke="#8C8C8C"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <Path
+      d="M6.06 3.05997C7.76941 1.75697 9.85089 1.03511 12 0.999975C19 0.999975 23 8.99998 23 8.99998C21.7561 11.3181 20.0309 13.3434 17.94 14.94M14.1 16.76C13.4117 16.9211 12.7069 17.0016 12 17C5 17 1 8.99998 1 8.99998C1.60702 7.86437 2.33094 6.79524 3.16 5.80998M9.88 6.87998C10.1546 6.58523 10.4859 6.34882 10.8538 6.18485C11.2218 6.02088 11.6191 5.93272 12.0219 5.92561C12.4247 5.9185 12.8248 5.9926 13.1984 6.14348C13.5719 6.29437 13.9113 6.51895 14.1962 6.80382C14.481 7.0887 14.7056 7.42803 14.8565 7.80159C15.0074 8.17514 15.0815 8.57525 15.0744 8.97807C15.0673 9.38088 14.9791 9.77813 14.8151 10.1461C14.6512 10.5141 14.4147 10.8453 14.12 11.12"
+      stroke="#8C8C8C"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
 
 const WalletSvg = (props) => (
   <Svg
@@ -445,8 +468,6 @@ const LineGraphic = (props) => (
       fill="#5B2FB6"
     />
   </Svg>
-
-
 );
 
 const CancelSvg = (props) => (
@@ -475,6 +496,32 @@ const CancelSvg = (props) => (
   </Svg>
 );
 
+const CancelWhiteSvg = (props) => (
+  <Svg
+    width={18}
+    height={18}
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M17 1L1 17"
+      stroke="#5B2FB6"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <Path
+      d="M17 17L1 1"
+      stroke="#fff"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
 const PlaySvg = (props) => (
   <Svg
     width={22}
@@ -491,6 +538,68 @@ const PlaySvg = (props) => (
   </Svg>
 );
 
+const SearchSvg = (props) => (
+  <Svg
+    width={24}
+    height={24}
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <G clipPath="url(#clip0_121_910)">
+      <Path
+        d="M5.5 9.5C7.70914 9.5 9.5 7.70914 9.5 5.5C9.5 3.29086 7.70914 1.5 5.5 1.5C3.29086 1.5 1.5 3.29086 1.5 5.5C1.5 7.70914 3.29086 9.5 5.5 9.5Z"
+        stroke="white"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <Path
+        d="M10.5002 10.5L8.3252 8.32495"
+        stroke="white"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </G>
+    <Defs>
+      <ClipPath id="clip0_121_910">
+        <Rect width={12} height={12} fill="white" />
+      </ClipPath>
+    </Defs>
+  </Svg>
+);
+
+const GraphicStockSvg = (props) => (
+  <Svg
+    width={300}
+    height={90}
+    viewBox="0 0 248 75"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path d="M2.99121 74.0401V71.4001" stroke="black" />
+    <Path d="M30.0918 74.0401V71.4001" stroke="black" />
+    <Path d="M57.1919 74.0401V71.4001" stroke="black" />
+    <Path d="M84.2925 74.0401V71.4001" stroke="black" />
+    <Path d="M111.393 74.0401V71.4001" stroke="black" />
+    <Path d="M138.493 74.0401V71.4001" stroke="black" />
+    <Path d="M165.594 74.0401V71.4001" stroke="black" />
+    <Path d="M192.694 74.0401V71.4001" stroke="black" />
+    <Path d="M219.795 74.0401V71.4001" stroke="black" />
+    <Path d="M246.895 74.0401V71.4001" stroke="black" />
+    <Path d="M2.99121 71.4001L248 71.0096" stroke="black" />
+    <Path d="M2.99121 1V71.4" stroke="black" />
+    <Path d="M0 71.3999H2.99102" stroke="black" />
+    <Path d="M0.000488281 53.8H2.99151" stroke="black" />
+    <Path d="M0.000488281 36.2H2.99151" stroke="black" />
+    <Path d="M0.000488281 18.6001H2.99151" stroke="black" />
+    <Path d="M0 1H2.99102" stroke="black" />
+  </Svg>
+);
+
 export {
   AskSvg,
   UserSvg,
@@ -502,12 +611,16 @@ export {
   ShinyIconSvg,
   WaveSvg,
   EyesOffSvg,
+  EyesOnSvg,
   WalletSvg,
   CalculatorSvg,
   VideoSvg,
-  BackSvg, 
+  BackSvg,
   PencilSvg,
   LineGraphic,
   CancelSvg,
-  PlaySvg
+  CancelWhiteSvg,
+  PlaySvg,
+  SearchSvg,
+  GraphicStockSvg,
 };

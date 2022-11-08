@@ -1,15 +1,22 @@
 import React from "react";
-import { init, home, calculator, signIn, signUp, profile, video } from "../mocks/mock";
+import { init, home, calculator, signIn, signUp, video, extract, assets } from "../mocks/mock";
 import InitialScreen from "../screens/Initial/InitialScreen";
 import SignUpScreen from "../screens/Create/SignUpScreen";
 import SignInScreen from "../screens/Login/SignInScreen";
 import HomeScreen from "../screens/Home/HomeScreen";
 import CalculatorScreen from "../screens/Calculator/CalculatorScreen";
-import ProfileScreen from "../screens/Profile/ProfileScreen";
 import VideosScreen from "../screens/Video/VideosScreen";
 import PlayerScreen from "../screens/Video/PlayerScreen";
+import ExtractScreen from "../screens/Extract/ExtractScreen";
+import AssetsScreen from "../screens/Assets/AssetsScreen";
+import { useContext } from "react";
+import { LoginContext } from "../Context/LoginContext";
+
+
 
 const InitScreenX = () => {
+  
+
   return <InitialScreen {...init}/>;
 };
 
@@ -22,15 +29,12 @@ const SignInScreenX = () => {
 };
 
 const HomeScreenX = () => {
-  return <HomeScreen {...home} />;
+
+  return <HomeScreen {...home} /> 
 };
 
 const CalculatorScreenX = () => {
   return <CalculatorScreen {...calculator} />;
-};
-
-const ProfileScreenX = () => {
-  return <ProfileScreen {...profile} />;
 };
 
 const VideoScreenX = ()=>{
@@ -42,13 +46,22 @@ const PlayerScrennX = ({route})=>{
   return <PlayerScreen title={title} id={id}/>
 }
 
+const ExtractScreenX = ()=>{
+  return <ExtractScreen {...extract}/>
+}
+
+const AssetsScreenX = ()=>{
+  return <AssetsScreen {...assets}/>
+}
+
 export {
   InitScreenX,
   SignUpScreenX,
   SignInScreenX,
   HomeScreenX,
   CalculatorScreenX,
-  ProfileScreenX,
   VideoScreenX,
-  PlayerScrennX
+  PlayerScrennX,
+  ExtractScreenX,
+  AssetsScreenX
 };
