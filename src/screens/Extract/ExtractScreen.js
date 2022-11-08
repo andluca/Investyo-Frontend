@@ -57,7 +57,7 @@ export default function ExtractScreen({headerbar}){
             <HeaderBar {...headerbar}></HeaderBar>
             <View>
                 <FlatList
-                style={{ top: 60*h }}
+                style={{ top: 60*h,flex:1, height: 700*h }}
                 nestedScrollEnabled
                 numColumns={3}
                 data={extract}
@@ -65,6 +65,12 @@ export default function ExtractScreen({headerbar}){
                 
 
                 </FlatList>
+                <View style={{ position: "relative", top: 280 * h, opacity: 0 }}>
+          <Text>Olá Mundo</Text>
+          <Text>Olá Mundo</Text>
+          <Text>Olá Mundo</Text>
+          
+        </View>
             </View>
         </SafeAreaView>
     )

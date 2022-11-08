@@ -191,6 +191,7 @@ const LoginContextProvider = ({ children }) => {
       return true;
     } catch (error) {
       return false;
+      Alert.alert("Usuário não encontrado")
     }
   };
 

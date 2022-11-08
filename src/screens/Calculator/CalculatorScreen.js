@@ -39,6 +39,8 @@ export default function CalculatorScreen({ headerbar }) {
   const [time, setTime] = useState([]);
   const [opacity, setOpacity] = useState(0);
 
+  
+
   const handleCalculator = () => {
     var array = CompoundInterestCalculate(
       initialValue,
@@ -134,7 +136,7 @@ export default function CalculatorScreen({ headerbar }) {
                             style={styles.input}
                             placeholder="0.00"
                             onChangeText={(newText) => setInitValue(newText)}
-                            defaultValue={initialValue}
+                            value={initialValue}
                             keyboardType="numeric"
                           />
                         </View>
@@ -158,7 +160,7 @@ export default function CalculatorScreen({ headerbar }) {
                             style={styles.input}
                             placeholder="0.00"
                             onChangeText={(newText) => setMonthValue(newText)}
-                            defaultValue={monthValue}
+                            value={monthValue}
                             keyboardType="numeric"
                           />
                         </View>
@@ -183,7 +185,7 @@ export default function CalculatorScreen({ headerbar }) {
                             style={[styles.input, { width: 282 * w }]}
                             placeholder="0.00"
                             onChangeText={(newText) => setRate(newText)}
-                            defaultValue={interestRate}
+                            value={interestRate}
                             keyboardType="numeric"
                           />
                         </View>
@@ -201,14 +203,14 @@ export default function CalculatorScreen({ headerbar }) {
                         }}
                       >
                         <View style={styles.typeContainer}>
-                          <Text style={styles.typeContainerText}>%</Text>
+                          <Text style={styles.typeContainerText}>t</Text>
                         </View>
                         <View style={styles.inputTaxes}>
                           <TextInput
                             style={[styles.input, { width: 282 * w }]}
                             placeholder="0.00"
                             onChangeText={(newText) => setPeriod(newText)}
-                            defaultValue={period}
+                            value={period}
                             keyboardType="numeric"
                           />
                         </View>

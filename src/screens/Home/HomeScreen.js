@@ -156,7 +156,7 @@ export default function HomeScreen({ balancebox, headerbar }) {
             width: 300 * w,
             backgroundColor: "#fff",
             height: 40 * h,
-            top: 40 * h,
+            top: 60 * h,
             left: 20 * w,
             borderRadius: 5,
             fontFamily: "RobotoLight",
@@ -173,7 +173,7 @@ export default function HomeScreen({ balancebox, headerbar }) {
             textShadowOffset: { width: -1, height: 1 },
             textShadowRadius: 3,
             left: 20 * w,
-            top: 55 * h,
+            top: 75 * h,
           }}
         >
           Insira a quantidade desejada:
@@ -183,7 +183,7 @@ export default function HomeScreen({ balancebox, headerbar }) {
             width: 300 * w,
             backgroundColor: "#fff",
             height: 40 * h,
-            top: 70 * h,
+            top: 85 * h,
             left: 20 * w,
             borderRadius: 5,
             fontFamily: "RobotoLight",

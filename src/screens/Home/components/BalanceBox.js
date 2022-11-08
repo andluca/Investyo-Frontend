@@ -68,7 +68,7 @@ export default function BalanceBox({ text1, balance, setBalance}) {
                   <Text style={styles.coin}>R$</Text>
 
                   <Text style={styles.value}>
-                    1358.97
+                   7298.47
                   </Text>
                 </View>
 
